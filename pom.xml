@@ -6,7 +6,7 @@
 	<name>Chroma Vector DB Java Client Library</name>
 	<groupId>io.github.locxngo</groupId>
 	<artifactId>chroma-client-parent</artifactId>
-	<version>1.0.0</version>
+	<version>1.0.1</version>
 	<packaging>pom</packaging>
 	<modules>
 		<module>sdk</module>
@@ -16,8 +16,6 @@
 		<maven.compiler.source>17</maven.compiler.source>
 		<maven.compiler.target>17</maven.compiler.target>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<gpg.keyname>runtime-defined</gpg.keyname>
-		<gpg.passphrase>runtime-defined</gpg.passphrase>
 	</properties>
 
 </project>
