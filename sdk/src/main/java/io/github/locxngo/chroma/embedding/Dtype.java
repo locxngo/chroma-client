@@ -1,4 +1,4 @@
-package io.github.locxngo.chroma.embedding.voyageai;
+package io.github.locxngo.chroma.embedding;
 
 import com.fasterxml.jackson.annotation.JsonValue;
 import lombok.Getter;

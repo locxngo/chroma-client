@@ -94,7 +94,7 @@ public class VoyageAIEmbeddingFunction extends BasicEmbeddingFunction {
 
     @Override
     public String name() {
-        return "voyageai";
+        return AIPlatform.VOYAGE_AI.getValue();
     }
 
     @Override

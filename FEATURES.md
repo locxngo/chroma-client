@@ -9,12 +9,12 @@
 - [x] Default Embedding Function (all-mini-lm model)
 - [x] OpenAI 
 - [x] VoyageAI 
-- [ ] Cohere 
+- [x] Cohere 
 - [ ] Google Gemini
 - [ ] Hugging Face Server
 - [ ] Hugging Face (Inference API)
 - [ ] Jina AI
-- [ ] Mistral
+- [x] Mistral
 - [ ] Ollama
 - [ ] Robotflow
 - [ ] TogetherAI

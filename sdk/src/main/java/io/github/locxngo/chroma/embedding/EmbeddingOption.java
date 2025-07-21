@@ -18,4 +18,12 @@ public class EmbeddingOption {
     public static EmbeddingOption empty() {
         return EmbeddingOption.builder().build();
     }
+
+    public static EmbeddingOption from(AIPlatform model, Map<String, Object> config) {
+        return EmbeddingOption.builder()
+            .apiKey(model.getApiKeyFromEnv())
+            .model((String) config.getOrDefault("model", null))
+            .options(config)
+            .build();
+    }
 }

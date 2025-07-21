@@ -100,6 +100,6 @@ public class OpenAIEmbeddingFunction extends BasicEmbeddingFunction {
 
     @Override
     public String name() {
-        return "openai";
+        return AIPlatform.OPENAI.getValue();
     }
 }

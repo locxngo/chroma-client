@@ -46,6 +46,6 @@ public class TextEmbeddingModelResponse<N> extends PrintableObject {
     public static class IntDtype extends TextEmbeddingModelResponse<Integer> {
     }
 
-    public static class ByteDtype extends TextEmbeddingModelResponse<Byte> {
+    public static class ByteDtype extends TextEmbeddingModelResponse<Integer> {
     }
 }
