@@ -6,7 +6,7 @@
 	<name>Chroma Vector DB Java Client Library</name>
 	<groupId>io.github.locxngo</groupId>
 	<artifactId>chroma-client</artifactId>
-	<version>1.0.2</version>
+	<version>1.1.0</version>
 	<properties>
 		<maven.compiler.source>17</maven.compiler.source>
 		<maven.compiler.target>17</maven.compiler.target>
