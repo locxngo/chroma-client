@@ -10,12 +10,12 @@
 - [x] OpenAI 
 - [x] VoyageAI 
 - [x] Cohere 
-- [ ] Google Gemini
+- [x] Google Gemini
 - [ ] Hugging Face Server
 - [ ] Hugging Face (Inference API)
 - [ ] Jina AI
 - [x] Mistral
-- [ ] Ollama
+- [x] Ollama
 - [ ] Robotflow
 - [ ] TogetherAI
 - [ ] Cloudflare Workers AI

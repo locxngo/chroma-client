@@ -17,7 +17,7 @@ Add Maven dependency:
 <dependency>
     <groupId>io.github.locxngo</groupId>
     <artifactId>chroma-client</artifactId>
-    <version>1.0.2</version>
+    <version>1.1.0</version>
 </dependency>
 ```
 
