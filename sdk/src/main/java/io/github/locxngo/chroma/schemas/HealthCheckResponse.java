@@ -7,7 +7,7 @@ import lombok.experimental.Accessors;
 
 @Setter
 @Getter
-@Accessors
+@Accessors(chain = true)
 public class HealthCheckResponse extends ErrorResponse {
     @JsonProperty("is_executor_ready")
     private boolean isExecutorReady;

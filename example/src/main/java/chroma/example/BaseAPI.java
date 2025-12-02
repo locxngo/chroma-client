@@ -13,9 +13,12 @@ public class BaseAPI {
 
     @SuppressWarnings("java:S112")
     public static <E extends ErrorResponse> void throwErrorIfHas(E response) {
+        if (response == null) {
+            throw new RuntimeException("Response is null");
+        }
         if (response.isError()) {
             throw new RuntimeException(
-                "code=" + response.getErrorCode() + ", err=" + response.getError() + ", msg=" + response.getMessage()
+                    "code=" + response.getErrorCode() + ", err=" + response.getError() + ", msg=" + response.getMessage()
             );
         }
     }
@@ -23,7 +26,7 @@ public class BaseAPI {
     @SuppressWarnings("java:S106")
     public static void main(String[] args) {
         BaseClient client = new BaseClient(
-            Config.builder().build()
+                Config.builder().build()
         );
         VersionResponse versionResponse = client.version();
         throwErrorIfHas(versionResponse);

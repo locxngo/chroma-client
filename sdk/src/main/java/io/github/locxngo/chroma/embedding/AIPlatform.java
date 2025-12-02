@@ -12,7 +12,10 @@ public enum AIPlatform {
     OPENAI("openai"),
     VOYAGE_AI("voyageai"),
     COHERE("cohere"),
-    MISTRAL("mistral");
+    MISTRAL("mistral"),
+    GOOGLE_GEMINI("google_gemini"),
+    OLLAMA("ollama");
+
     @JsonValue
     private final String value;
 
@@ -23,8 +26,8 @@ public enum AIPlatform {
     @JsonCreator
     public static AIPlatform fromValue(String value) {
         return Stream.of(AIPlatform.values())
-            .filter(status -> status.getValue().equals(value))
-            .findFirst().orElseThrow(() -> new NotFoundValueException("not found enum Model for value " + value));
+                .filter(status -> status.getValue().equals(value))
+                .findFirst().orElseThrow(() -> new NotFoundValueException("not found enum Model for value " + value));
     }
 
     public String getApiKeyFromEnv() {

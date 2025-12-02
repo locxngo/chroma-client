@@ -22,22 +22,21 @@ public class BaseClient {
 
     public BaseClient(Config config) {
         this.apiClient = new ApiClient(
-            config.getEndpoint(),
-            config.getParameters()
-        );
+                config.getEndpoint(),
+                config.getParameters());
     }
 
     protected <T extends ErrorResponse> T badParameter(T response, String message) {
         response.setErrorCode(HttpStatus.SC_BAD_REQUEST)
-            .setError(Constants.ERROR_PARAMETER)
-            .setMessage(message);
+                .setError(Constants.ERROR_PARAMETER)
+                .setMessage(message);
         return response;
     }
 
     protected <T extends ErrorResponse> T ioException(T response, String message) {
         response.setErrorCode(HttpStatus.SC_BAD_REQUEST)
-            .setError(Constants.ERROR_IO)
-            .setMessage(message);
+                .setError(Constants.ERROR_IO)
+                .setMessage(message);
         return response;
     }
 
@@ -58,14 +57,14 @@ public class BaseClient {
                     throw new ChromaAPIException("Response data is null");
                 }
                 return (ResetResponse) new ResetResponse()
-                    .setErrorCode(response.code())
-                    .setError("").setMessage(response.message());
+                        .setErrorCode(response.code())
+                        .setError("").setMessage(response.message());
             }
             if (response.body() == null) {
                 throw new ChromaAPIException("Response data is null");
             }
             return new ResetResponse()
-                .setSuccess(Boolean.parseBoolean(response.body().string().replace("\"", "")));
+                    .setSuccess(Boolean.parseBoolean(response.body().string().replace("\"", "")));
         } catch (IOException exception) {
             return ioException(new ResetResponse(), exception.getMessage());
         }
@@ -79,14 +78,16 @@ public class BaseClient {
     }
 
     /**
-     * Get the current time in nanoseconds since epoch. Used to check if the server is alive.
+     * Get the current time in nanoseconds since epoch. Used to check if the server
+     * is alive.
      */
     public HeartbeatResponse heartBeat() {
         return apiClient.get(ApiPath.HEART_BEAT, HeartbeatResponse.class);
     }
 
     /**
-     * Return the maximum number of records that can be created or mutated in a single call.
+     * Return the maximum number of records that can be created or mutated in a
+     * single call.
      */
     public ChecklistResponse preFlightChecks() {
         return apiClient.get(ApiPath.PRE_FLIGHT_CHECKS, ChecklistResponse.class);
@@ -102,15 +103,17 @@ public class BaseClient {
                     throw new ChromaAPIException("Response data is null");
                 }
                 return (VersionResponse) getApiClient().getObjectMapper()
-                    .readValue(response.body().string(), CountResponse.class)
-                    .setErrorCode(response.code());
+                        .readValue(response.body().string(), CountResponse.class)
+                        .setErrorCode(response.code());
             }
             if (response.body() == null) {
                 throw new ChromaAPIException("Response data is null");
             }
             return new VersionResponse()
-                .setVersion(response.body().string().replace("\"", ""));
-        } catch (IOException exception) {
+                    .setVersion(response.body().string().replace("\"", ""));
+        } catch (
+
+        IOException exception) {
             return ioException(new VersionResponse(), exception.getMessage());
         }
     }

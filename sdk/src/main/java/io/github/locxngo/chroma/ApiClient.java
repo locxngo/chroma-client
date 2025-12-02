@@ -23,6 +23,7 @@ import java.util.Map;
 @Getter
 @Accessors(chain = true)
 public class ApiClient {
+
     private final ObjectMapper objectMapper = new ObjectMapper();
     private final OkHttpClient client = new OkHttpClient();
     private String baseUrl;

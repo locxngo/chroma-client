@@ -10,7 +10,8 @@ public class EmbeddingFunctionFactory {
     }
 
     /**
-     * Creates and returns an instance of {@link EmbeddingFunction} from given name and map of config
+     * Creates and returns an instance of {@link EmbeddingFunction} from given name
+     * and map of config
      */
     public static EmbeddingFunction get(String name, Map<String, Object> config) {
         AIPlatform model = AIPlatform.fromValue(name);
@@ -19,12 +20,16 @@ public class EmbeddingFunctionFactory {
             case VOYAGE_AI -> new VoyageAIEmbeddingFunction(EmbeddingOption.from(AIPlatform.VOYAGE_AI, config));
             case COHERE -> new CohereEmbeddingFunction(EmbeddingOption.from(AIPlatform.COHERE, config));
             case MISTRAL -> new MistralAIEmbeddingFunction(EmbeddingOption.from(AIPlatform.MISTRAL, config));
+            case GOOGLE_GEMINI ->
+                new GoogleGeminiEmbeddingFunction(EmbeddingOption.from(AIPlatform.GOOGLE_GEMINI, config));
+            case OLLAMA -> new OllamaEmbeddingFunction(EmbeddingOption.from(AIPlatform.OLLAMA, config));
             default -> throw new UnknownEmbeddingFunctionException(name);
         };
     }
 
     /**
-     * Creates and returns an instance of {@link EmbeddingFunction} from given name and config
+     * Creates and returns an instance of {@link EmbeddingFunction} from given name
+     * and config
      */
     public static EmbeddingFunction get(String name, EmbeddingOption config) {
         AIPlatform model = AIPlatform.fromValue(name);
@@ -33,6 +38,8 @@ public class EmbeddingFunctionFactory {
             case VOYAGE_AI -> new VoyageAIEmbeddingFunction(config);
             case COHERE -> new CohereEmbeddingFunction(config);
             case MISTRAL -> new MistralAIEmbeddingFunction(config);
+            case GOOGLE_GEMINI -> new GoogleGeminiEmbeddingFunction(config);
+            case OLLAMA -> new OllamaEmbeddingFunction(config);
             default -> throw new UnknownEmbeddingFunctionException(name);
         };
     }
